@@ -1,0 +1,3640 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/coresense/cso#"
+     xml:base="http://w3id.org/coresense/cso"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://w3id.org/coresense/cso">
+        <owl:versionIRI rdf:resource="http://w3id.org/coresense/cso/2026-07-28"/>
+        <terms:description xml:lang="en">The machine-consumable OWL 2 form of the CoreSense Ontology. CSO is
+        authored by hand to match the SysML v2 model in sysml/ and the prose definitions in
+        CS-115, which remain the conceptual source of record.</terms:description>
+        <terms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
+        <terms:publisher xml:lang="en">The CORESENSE Consortium</terms:publisher>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <terms:title xml:lang="en">CoreSense Ontology (CSO)</terms:title>
+        <rdfs:seeAlso rdf:resource="http://www.coresense.eu"/>
+        <owl:versionInfo>2026-07-28</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+        <rdfs:label xml:lang="en">alternative label</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coresense/cso#addressesMission -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#addressesMission">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Mission"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">addresses mission</rdfs:label>
+        <skos:definition xml:lang="en">Relates a mission plan or mission specification to the mission it serves.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#assessesProjection -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#assessesProjection">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Evaluation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Projection"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">assesses projection</rdfs:label>
+        <skos:definition xml:lang="en">Relates an evaluation to the projection it assesses.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#assignedToAgent -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#assignedToAgent">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">assigned to agent</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action to the agent made responsible for it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#behaviorOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#behaviorOf">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/coresense/cso#hasTrajectory"/>
+            <rdf:Description rdf:about="http://w3id.org/coresense/cso#trajectoryOf"/>
+        </owl:propertyChainAxiom>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">behavior of</rdfs:label>
+        <skos:definition xml:lang="en">Relates a behavior to the system that exhibits or may exhibit it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#capabilityOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#capabilityOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">capability of</rdfs:label>
+        <skos:definition xml:lang="en">Relates a capability to the system that holds it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#commandedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#commandedBy">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Actuator"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">commanded by</rdfs:label>
+        <skos:definition xml:lang="en">Relates an actuator to an agent that commands it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#commands -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#commands">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">commands</rdfs:label>
+        <skos:definition xml:lang="en">Relates an agent to an action whose execution it orders.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#concernsExtendedSystem -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#concernsExtendedSystem">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">concerns extended system</rdfs:label>
+        <skos:definition xml:lang="en">Relates a term to the extended system it is stated about.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#contributesToBehavior -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#contributesToBehavior">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Role"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#PotentialBehavior"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">contributes to behavior</rdfs:label>
+        <skos:definition xml:lang="en">Relates a role to a potential behavior it contributes to.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#contributesToFunction -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#contributesToFunction">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Role"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Function"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">contributes to function</rdfs:label>
+        <skos:definition xml:lang="en">Relates a role to a function it contributes to.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#describesEntity -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#describesEntity">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Feature"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">describes entity</rdfs:label>
+        <skos:definition xml:lang="en">Relates a feature to the entity it characterizes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#describesPhenomenon -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#describesPhenomenon">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Feature"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Phenomenon"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">describes phenomenon</rdfs:label>
+        <skos:definition xml:lang="en">Relates a feature to the phenomenon it characterizes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#desires -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#desires">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Stakeholder"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Goal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">desires</rdfs:label>
+        <skos:altLabel xml:lang="en">desire</skos:altLabel>
+        <skos:definition xml:lang="en">Relates a stakeholder to a goal it wishes to see achieved or maintained.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#environmentOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#environmentOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Environment"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">environment of</rdfs:label>
+        <skos:definition xml:lang="en">Relates an environment to the system whose environment it is.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#executes -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#executes">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">executes</rdfs:label>
+        <skos:definition xml:lang="en">Relates an agent or actuator to an action it carries out.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#exerts -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#exerts">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coresense/cso#hasModelet"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Engine"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">exerts</rdfs:label>
+        <skos:definition xml:lang="en">Relates an engine to a modelet it is able to exert.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#exertsModelet -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#exertsModelet">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Exertion"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">exerts modelet</rdfs:label>
+        <skos:definition xml:lang="en">Relates an exertion to a modelet executed in it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#exhibitedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#exhibitedBy">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Phenomenon"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">exhibited by</rdfs:label>
+        <skos:definition xml:lang="en">Relates a phenomenon to an entity that exhibits it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#focusesOnSystem -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#focusesOnSystem">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/coresense/cso#concernsExtendedSystem"/>
+            <rdf:Description rdf:about="http://w3id.org/coresense/cso#hasTargetSystem"/>
+        </owl:propertyChainAxiom>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">focuses on system</rdfs:label>
+        <skos:definition xml:lang="en">Relates a system of interest to the target system of the extended system it concerns.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#followsPolicy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#followsPolicy">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ActionSpecification"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Policy"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">follows policy</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action specification to the policy that determined its candidate actions.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasAdverseEvent -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasAdverseEvent">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Risk"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#AdverseOccurrence"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has adverse event</rdfs:label>
+        <skos:definition xml:lang="en">Relates a risk to the adverse occurrence whose potential it measures.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasAspect -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasAspect">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has aspect</rdfs:label>
+        <skos:definition xml:lang="en">Relates a modelet to the aspect of its referent that it represents.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasAssignee -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasAssignee">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ActionOrder"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has assignee</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action order to the agent designated to execute it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasCandidateAction -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasCandidateAction">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Policy"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has candidate action</rdfs:label>
+        <skos:definition xml:lang="en">Relates a policy to an action it may select as an admissible response.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasComponent -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasComponent">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has component</rdfs:label>
+        <skos:definition xml:lang="en">Relates a system to one of the entities that compose it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasComponentState -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasComponentState">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#SystemState"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#EntityState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has component state</rdfs:label>
+        <skos:definition xml:lang="en">Relates a system state to the state of one of the components of that system.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasContext -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasContext">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Context"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has context</rdfs:label>
+        <skos:definition xml:lang="en">Relates a term to the context within which it is stated.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasDesiredState -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasDesiredState">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Goal"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#SystemState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has desired state</rdfs:label>
+        <skos:definition xml:lang="en">Relates a goal to a system state it aims to achieve or maintain.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasEnvironment -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasEnvironment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Environment"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has environment</rdfs:label>
+        <skos:definition xml:lang="en">Relates an extended system to the environment of its target system.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasEnvironmentEntity -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasEnvironmentEntity">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has environment entity</rdfs:label>
+        <skos:definition xml:lang="en">Relates an environment, or an extended system, to an entity that belongs to that environment.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasEpistemicState -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasEpistemicState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#EpistemicState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has epistemic state</rdfs:label>
+        <skos:definition xml:lang="en">Relates model metadata to the epistemic standing of the model.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasExpectedPerformance -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasExpectedPerformance">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Functionality"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasure"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has expected performance</rdfs:label>
+        <skos:definition xml:lang="en">Relates a functionality to a performance measure it is expected to attain.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasInputFeature -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasInputFeature">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Meaning"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Feature"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has input feature</rdfs:label>
+        <skos:definition xml:lang="en">Relates a meaning to a feature it was derived from.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasInterestIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasInterestIn">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Stakeholder"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has interest in</rdfs:label>
+        <skos:altLabel xml:lang="en">interest</skos:altLabel>
+        <skos:definition xml:lang="en">Relates a stakeholder to an extended system whose behavior or outcomes matter to it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasMeasureType -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasMeasureType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasureType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has measure type</rdfs:label>
+        <skos:definition xml:lang="en">Relates a metric or performance measure to its kind of performance measure.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasMetadata -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasMetadata">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Model"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has metadata</rdfs:label>
+        <skos:definition xml:lang="en">Relates a model to its descriptive metadata record.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasMetamodelingLevel -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasMetamodelingLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#MOFLevel"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has metamodeling level</rdfs:label>
+        <skos:definition xml:lang="en">Relates model metadata to the OMG MOF layer at which the model sits.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasMetric -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasMetric">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#MissionSuccessCriterion"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Metric"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has metric</rdfs:label>
+        <skos:definition xml:lang="en">Relates a mission success criterion to the metric it is expressed with.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasModelType -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasModelType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Model"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ModelType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has model type</rdfs:label>
+        <skos:definition xml:lang="en">Relates a model to its kind of representation.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasModelet -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasModelet">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has modelet</rdfs:label>
+        <skos:definition xml:lang="en">Relates a model, engine, cognitive function or meaning to a modelet it comprises or draws on.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasPerformanceConstraint -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasPerformanceConstraint">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#PerformanceConstraint"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has performance constraint</rdfs:label>
+        <skos:definition xml:lang="en">Relates model metadata to a performance constraint on the use of the model.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasPerformanceMeasure -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasPerformanceMeasure">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Evaluation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasure"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has performance measure</rdfs:label>
+        <skos:definition xml:lang="en">Relates an evaluation to a performance measure it takes into account.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasPlannedAction -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasPlannedAction">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Task"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has planned action</rdfs:label>
+        <skos:definition xml:lang="en">Relates a task to one of the actions planned to carry it out.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasPotentialBehavior -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasPotentialBehavior">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Projection"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#PotentialBehavior"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has potential behavior</rdfs:label>
+        <skos:definition xml:lang="en">Relates a projection to the potential behavior it maps.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasProvenance -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasProvenance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Provenance"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has provenance</rdfs:label>
+        <skos:definition xml:lang="en">Relates model metadata to the origin and lifecycle standing of the model.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasReferent -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasReferent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has referent</rdfs:label>
+        <skos:altLabel xml:lang="en">represents referent</skos:altLabel>
+        <skos:definition xml:lang="en">Relates a model or modelet to the entity it represents.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasRelation -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasRelation">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#BinaryRelation"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has relation</rdfs:label>
+        <skos:definition xml:lang="en">Relates a system to one of the binary relations holding between its components.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasRelationState -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasRelationState">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#SystemState"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#BinaryRelationState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has relation state</rdfs:label>
+        <skos:definition xml:lang="en">Relates a system state to the state of one of the relations of that system.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasRisk -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasRisk">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Evaluation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Risk"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has risk</rdfs:label>
+        <skos:definition xml:lang="en">Relates an evaluation to a risk it takes into account.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasScalabilityConstraint -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasScalabilityConstraint">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ScalabilityConstraint"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has scalability constraint</rdfs:label>
+        <skos:definition xml:lang="en">Relates model metadata to a scalability constraint on the use of the model.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasSource -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasSource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#BinaryRelation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has source</rdfs:label>
+        <skos:definition xml:lang="en">Relates a binary relation to the entity it holds from.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasSpecification -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasSpecification">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ActionOrder"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ActionSpecification"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has specification</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action order to the action specification it activates.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasStakeholder -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasStakeholder">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Stakeholder"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has stakeholder</rdfs:label>
+        <skos:definition xml:lang="en">Relates a term to the stakeholder whose standpoint it is stated from.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasState -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasState">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#SystemTrajectory"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#SystemState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has state</rdfs:label>
+        <skos:definition xml:lang="en">Relates a system trajectory to one of the system states in its sequence.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasStatus -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ActionOrderStatus"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ActionStatus"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has status</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action order status to the execution status it holds.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasSubject -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasSubject">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has subject</rdfs:label>
+        <skos:definition xml:lang="en">Relates a measure or characterization to the entity it is stated about.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasSuccessCriterion -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasSuccessCriterion">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#MissionSpecification"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#MissionSuccessCriterion"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has success criterion</rdfs:label>
+        <skos:definition xml:lang="en">Relates a mission specification to one of its mission success criteria.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasSystemEnvironmentRelation -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasSystemEnvironmentRelation">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coresense/cso#hasRelation"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#BinaryRelation"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has system-environment relation</rdfs:label>
+        <skos:definition xml:lang="en">Relates an extended system to a binary relation holding between its target system and an entity of its environment.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasTarget -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasTarget">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#BinaryRelation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has target</rdfs:label>
+        <skos:definition xml:lang="en">Relates a binary relation to the entity it holds to.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasTargetSystem -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasTargetSystem">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coresense/cso#hasComponent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has target system</rdfs:label>
+        <skos:definition xml:lang="en">Relates an extended system to the system that is its target.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasTask -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasTask">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#MissionPlan"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Task"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has task</rdfs:label>
+        <skos:definition xml:lang="en">Relates a mission plan to one of the tasks it comprises.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasTimeInterval -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasTimeInterval">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#TimeInterval"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has time interval</rdfs:label>
+        <skos:definition xml:lang="en">Relates an occurrence to the time interval over which it is considered.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasTrajectory -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasTrajectory">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#SystemTrajectory"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has trajectory</rdfs:label>
+        <skos:definition xml:lang="en">Relates an exhibited or potential behavior to a system trajectory it comprises.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasTriggerCondition -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#hasTriggerCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Trigger"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#TriggerCondition"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has trigger condition</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action trigger to the condition whose satisfaction fires it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#instantiatesCapability -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#instantiatesCapability">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Functionality"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">instantiates capability</rdfs:label>
+        <skos:definition xml:lang="en">Relates a functionality to the capability it instantiates.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#manifestsCapability -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#manifestsCapability">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ExhibitedBehavior"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">manifests capability</rdfs:label>
+        <skos:definition xml:lang="en">Relates an exhibited behavior to a capability it makes manifest.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#measuresBehavior -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#measuresBehavior">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasure"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ExhibitedBehavior"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">measures behavior</rdfs:label>
+        <skos:definition xml:lang="en">Relates a performance measure to the exhibited behavior it assesses.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#observes -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#observes">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Sensor"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">observes</rdfs:label>
+        <skos:definition xml:lang="en">Relates a sensor to an entity it is able to observe.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#pairsEngine -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#pairsEngine">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModeletEnginePair"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Engine"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">pairs engine</rdfs:label>
+        <skos:definition xml:lang="en">Relates a modelet-engine pair to its engine.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#pairsModelet -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#pairsModelet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModeletEnginePair"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">pairs modelet</rdfs:label>
+        <skos:definition xml:lang="en">Relates a modelet-engine pair to its modelet.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#playedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#playedBy">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Role"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">played by</rdfs:label>
+        <skos:definition xml:lang="en">Relates a role to an entity that assumes it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#producesData -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#producesData">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Sense"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Data"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">produces data</rdfs:label>
+        <skos:definition xml:lang="en">Relates a sense action to the raw data it yields.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#pursuesGoal -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#pursuesGoal">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Goal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">pursues goal</rdfs:label>
+        <skos:definition xml:lang="en">Relates a term to a goal it is intended to contribute to.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#realizedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#realizedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Estimation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ModeletEnginePair"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">realized by</rdfs:label>
+        <skos:definition xml:lang="en">Relates an estimation to the modelet-engine pair that realizes it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#realizes -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#realizes">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Function"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+        <skos:definition xml:lang="en">Relates a capability to the function it makes available.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#requiresCapability -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#requiresCapability">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Task"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">requires capability</rdfs:label>
+        <skos:definition xml:lang="en">Relates a task to a capability of the target system that the task requires.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#respondsToTrigger -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#respondsToTrigger">
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Trigger"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">responds to trigger</rdfs:label>
+        <skos:definition xml:lang="en">Relates a policy or action specification to the action trigger it answers.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#selectsAction -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#selectsAction">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ActionSpecification"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">selects action</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action specification to an action it selects for execution.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#senses -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#senses">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Sensor"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Sense"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">senses</rdfs:label>
+        <skos:definition xml:lang="en">Relates a sensor to a sense action it performs.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#sensesEntity -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#sensesEntity">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Sense"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">senses entity</rdfs:label>
+        <skos:definition xml:lang="en">Relates a sense action to the entity it acquires data about.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#stateOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#stateOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#EntityState"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">state of</rdfs:label>
+        <skos:definition xml:lang="en">Relates an entity state to the entity whose state it is.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#stateOfRelation -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#stateOfRelation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#BinaryRelationState"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#BinaryRelation"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">state of relation</rdfs:label>
+        <skos:definition xml:lang="en">Relates a binary relation state to the binary relation whose state it is.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#statusOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#statusOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ActionOrderStatus"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#ActionOrder"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">status of</rdfs:label>
+        <skos:definition xml:lang="en">Relates an action order status to the action order whose status it records.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#trajectoryOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#trajectoryOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#SystemTrajectory"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">trajectory of</rdfs:label>
+        <skos:definition xml:lang="en">Relates a system trajectory to the system whose evolution it describes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#usedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#usedBy">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Model"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">used by</rdfs:label>
+        <skos:definition xml:lang="en">Relates a model to the entity that uses it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#usesEngine -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coresense/cso#usesEngine">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Exertion"/>
+        <rdfs:range rdf:resource="http://w3id.org/coresense/cso#Engine"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">uses engine</rdfs:label>
+        <skos:definition xml:lang="en">Relates an exertion to the engine that performs it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coresense/cso#abstractionLevel -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#abstractionLevel">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">abstraction level</rdfs:label>
+        <skos:definition xml:lang="en">The scope and detail level of a model, including the phenomena it includes and excludes.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#actualResponseTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#actualResponseTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#PerformanceConstraint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">actual response time</rdfs:label>
+        <skos:definition xml:lang="en">The response time actually attained when a model is used, in seconds.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#aspectDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#aspectDescription">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">aspect description</rdfs:label>
+        <skos:definition xml:lang="en">A textual account of the aspect of its referent that a modelet represents.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#assumption -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#assumption">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">assumption</rdfs:label>
+        <skos:definition xml:lang="en">A declared assumption, constraint or simplification made by a model.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#benefit -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#benefit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#StakeholderValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">benefit</rdfs:label>
+        <skos:definition xml:lang="en">The amount of benefit provided to a stakeholder in a context.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#cost -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#cost">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#StakeholderValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">cost</rdfs:label>
+        <skos:definition xml:lang="en">The cost at which benefit is provided to a stakeholder in a context.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#desiredEffect -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#desiredEffect">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Mission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">desired effect</rdfs:label>
+        <skos:definition xml:lang="en">An effect or target condition a mission aims to bring about.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#finalTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#finalTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#TimeInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">final time</rdfs:label>
+        <skos:definition xml:lang="en">The time instant at which a time interval ends.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasAcceptanceCriterion -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#hasAcceptanceCriterion">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has acceptance criterion</rdfs:label>
+        <skos:definition xml:lang="en">A criterion under which a capability counts as successfully performed.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#hasCondition">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has condition</rdfs:label>
+        <skos:definition xml:lang="en">A condition deemed relevant in a context, or required for a capability to hold.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#hasDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has description</rdfs:label>
+        <skos:definition xml:lang="en">A textual account of a term instance.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasKnowledgeItem -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#hasKnowledgeItem">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Context"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has knowledge item</rdfs:label>
+        <skos:definition xml:lang="en">A piece of content retained about an extended system in a context.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasResponsibility -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#hasResponsibility">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Role"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has responsibility</rdfs:label>
+        <skos:definition xml:lang="en">A responsibility carried by an entity that assumes a role.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hasRoleConstraint -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#hasRoleConstraint">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Role"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">has role constraint</rdfs:label>
+        <skos:definition xml:lang="en">A constraint imposed on an entity that assumes a role.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#identifier">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">identifier</rdfs:label>
+        <skos:definition xml:lang="en">A unique identifier for a model instance.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#information -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#information">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Feature"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">information</rdfs:label>
+        <skos:definition xml:lang="en">The information content encoded by a feature.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#initialTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#initialTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#TimeInterval"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">initial time</rdfs:label>
+        <skos:definition xml:lang="en">The time instant at which a time interval starts.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#intendedUse -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#intendedUse">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">intended use</rdfs:label>
+        <skos:definition xml:lang="en">The purpose a model is intended for, such as simulation or prediction.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#isActionable -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#isActionable">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">is actionable</rdfs:label>
+        <skos:definition xml:lang="en">Whether a model can be used to produce action.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#isAdaptable -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#isAdaptable">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">is adaptable</rdfs:label>
+        <skos:definition xml:lang="en">Whether a system is able to change its own structure or behavior.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#isComposable -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#isComposable">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">is composable</rdfs:label>
+        <skos:definition xml:lang="en">Whether a model or modelet can be composed with others.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#isExertableOnItsOwn -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#isExertableOnItsOwn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">is exertable on its own</rdfs:label>
+        <skos:definition xml:lang="en">Whether a model or modelet can be exerted without being composed with others.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#likelihood -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#likelihood">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Risk"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">likelihood</rdfs:label>
+        <skos:definition xml:lang="en">The probability, between 0 and 1, that the adverse event of a risk occurs.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#maxResponseTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#maxResponseTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#PerformanceConstraint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">maximum response time</rdfs:label>
+        <skos:definition xml:lang="en">The largest response time admissible when a model is used, in seconds.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#maxUsers -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#maxUsers">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ScalabilityConstraint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">maximum number of users</rdfs:label>
+        <skos:definition xml:lang="en">The largest number of concurrent users admissible when a model is used.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#measureValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#measureValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">measure value</rdfs:label>
+        <skos:definition xml:lang="en">The value attained by a performance measure.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#modelClass -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#modelClass">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">model class</rdfs:label>
+        <skos:definition xml:lang="en">The abstract structure or mathematical category of a model.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#modelFormalism -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#modelFormalism">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">model formalism</rdfs:label>
+        <skos:definition xml:lang="en">The notation or formal representation used to express a model.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#modelledPhenomenon -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#modelledPhenomenon">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ModelMetadata"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">modelled phenomenon</rdfs:label>
+        <skos:definition xml:lang="en">The real-world or conceptual system or process that a model represents.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#name -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+        <skos:definition xml:lang="en">The name by which a term instance is known.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#numberOfUsers -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#numberOfUsers">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#ScalabilityConstraint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">number of users</rdfs:label>
+        <skos:definition xml:lang="en">The number of concurrent users actually served when a model is used.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#rawValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#rawValue">
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Data"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">raw value</rdfs:label>
+        <skos:definition xml:lang="en">An encoded value carried by a datum.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#satisfactionCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#satisfactionCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#MissionSuccessCriterion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">satisfaction condition</rdfs:label>
+        <skos:definition xml:lang="en">The condition under which a mission success criterion counts as met.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#severity -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#severity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coresense/cso#Risk"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">severity</rdfs:label>
+        <skos:definition xml:lang="en">The magnitude of the negative effect should the adverse event of a risk occur.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#timeInstant -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coresense/cso#timeInstant">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">time instant</rdfs:label>
+        <skos:definition xml:lang="en">The time instant at which a state holds.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Action -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Action">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model reuses the standard library element Actions::Action.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">action</rdfs:label>
+        <skos:definition xml:lang="en">An action is a performance that an agent executes or commands in order to bring about a change in an extended system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ActionOrder -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ActionOrder">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasAssignee"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasSpecification"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#ActionSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">action order</rdfs:label>
+        <skos:definition xml:lang="en">An action order is an executable directive, issued within a given context of an extended system, that activates the execution of the actions in a given action specification by the designated agents.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ActionOrderStatus -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ActionOrderStatus">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasStatus"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ActionStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#statusOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#ActionOrder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model declares this element without prose.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">action order status</rdfs:label>
+        <skos:definition xml:lang="en">An action order status records the execution status reached by a given action order.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ActionSpecification -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ActionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">action specification</rdfs:label>
+        <skos:definition xml:lang="en">An action specification is a concrete description, produced in response to an action trigger within a given context according to a chosen policy, that: (i) selects one or more actions from the candidate set determined by that policy, and (ii) assigns one or more responsible agents to each selected action.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ActionStatus -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ActionStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#aborted"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#failed"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#notTriggered"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#succeeded"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#timedOut"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">action status</rdfs:label>
+        <skos:definition xml:lang="en">The execution status reached by an action order.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Actuator -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Actuator">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#commandedBy"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#executes"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">actuator</rdfs:label>
+        <skos:definition xml:lang="en">An actuator is a physical entity that, when provided with an input, produces a physical effect on the environment or the system (e.g., motion, force, or flow), thereby executing actions commanded by an agent.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#AdverseOccurrence -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#AdverseOccurrence">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model declares this element without prose.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">adverse occurrence</rdfs:label>
+        <skos:altLabel xml:lang="en">adverse event</skos:altLabel>
+        <skos:definition xml:lang="en">An adverse occurrence is an occurrence whose happening would negatively affect an entity, system, or extended system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Agent -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Agent">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#commands"/>
+                        <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Action"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#executes"/>
+                        <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Action"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">agent</rdfs:label>
+        <skos:definition xml:lang="en">An agent is an entity capable of executing or commanding actions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#BinaryRelation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#BinaryRelation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasSource"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasTarget"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">binary relation</rdfs:label>
+        <skos:definition xml:lang="en">A binary relation is a relation between two entities, holding from a source entity to a target entity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#BinaryRelationState -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#BinaryRelationState">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#stateOfRelation"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#BinaryRelation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">binary relation state</rdfs:label>
+        <skos:definition xml:lang="en">The state of a binary relation at a given time instant is the tuple of the values of its attributes.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Capability -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Capability">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#capabilityOf"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Function"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">capability</rdfs:label>
+        <skos:definition xml:lang="en">A capability is the ability of a system to perform a specific function successfully under stated conditions and acceptance criteria.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#CognitiveCapability -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#CognitiveCapability">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#CognitiveFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">cognitive capability</rdfs:label>
+        <skos:definition xml:lang="en">A cognitive capability is a capability of a system that is realized by a cognitive function and enables the system to use knowledge to produce intentional action.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#CognitiveFunction -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#CognitiveFunction">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Function"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasModelet"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">cognitive function</rdfs:label>
+        <skos:definition xml:lang="en">A cognitive function is a function that processes information by executing one or more modelets.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Concern -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Concern">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasStakeholder"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">concern</rdfs:label>
+        <skos:definition xml:lang="en">A concern is a matter of interest to a stakeholder that, in a given context, can be derived from a need and may give rise to requirements.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Context -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Context">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#concernsExtendedSystem"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">context</rdfs:label>
+        <skos:definition xml:lang="en">Given an extended system, the context is the set of the content retained about that extended system, together with the assumptions and conditions, deemed relevant to interpret, evaluate and act within that extended system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Data -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Data">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#concernsExtendedSystem"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">data</rdfs:label>
+        <skos:definition xml:lang="en">Data are encoded representations of aspects of an entity or system (e.g., phenomena, properties, states, or attributes) in a form suitable for communication, storage, or processing.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Engine -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Engine">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#exerts"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">engine</rdfs:label>
+        <skos:definition xml:lang="en">An engine is a component that exerts a modelet to derive a result.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Entity -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Entity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">entity</rdfs:label>
+        <skos:definition xml:lang="en">An entity is any thing in the universe of discourse that can be distinguished from all other things in that universe.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#EntityState -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#EntityState">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#stateOf"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">entity state</rdfs:label>
+        <skos:definition xml:lang="en">The state of an entity at a given time instant is the tuple of the values of its attributes.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Environment -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Environment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#environmentOf"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">environment</rdfs:label>
+        <skos:definition xml:lang="en">The environment of a system is the collection of entities that are not part of the system but are capable of influencing or being influenced by it.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#EpistemicState -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#EpistemicState">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Evidenced"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Limited"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Uncertain"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Validated"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">epistemic state</rdfs:label>
+        <skos:definition xml:lang="en">The epistemic standing of a model: validated, evidenced, uncertain or limited.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Estimation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Estimation">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#CognitiveFunction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#realizedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#ModeletEnginePair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">estimation</rdfs:label>
+        <skos:definition xml:lang="en">Estimation is a cognitive function realized by a modelet-engine pair whose purpose is to infer unknown or uncertain quantities of a referent from available data and prior knowledge.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Evaluation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Evaluation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#assessesProjection"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#Projection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">evaluation</rdfs:label>
+        <skos:definition xml:lang="en">Evaluation is an assessment of a projection with respect to a specific set of goals.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Exertion -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Exertion">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#exertsModelet"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#usesEngine"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#Engine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">exertion</rdfs:label>
+        <skos:altLabel xml:lang="en">exert</skos:altLabel>
+        <skos:definition xml:lang="en">Exertion is the process of executing one or more modelets to given inputs in order to derive results about their referent.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ExhibitedBehavior -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ExhibitedBehavior">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasTrajectory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#SystemTrajectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">exhibited behavior</rdfs:label>
+        <skos:definition xml:lang="en">The exhibited behavior of a system over an observational interval is the trajectory followed by the system during that interval.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ExtendedSystem -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ExtendedSystem">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasEnvironment"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#Environment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasTargetSystem"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">extended system</rdfs:label>
+        <skos:definition xml:lang="en">An extended system is composed of a target system together with its selected environment and the relations between both of them.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Feature -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Feature">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#concernsExtendedSystem"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">feature</rdfs:label>
+        <skos:definition xml:lang="en">A feature is a derived piece of information that encodes some characteristic of an entity, system, phenomenon, or context, obtained from observations or sensor data and used as input to functions or modelets.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Function -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Function">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">function</rdfs:label>
+        <skos:definition xml:lang="en">A function is a transformation that maps specific inputs to outputs.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Functionality -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Functionality">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasExpectedPerformance"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasSubject"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#instantiatesCapability"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Capability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#pursuesGoal"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Goal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">functionality</rdfs:label>
+        <skos:definition xml:lang="en">A functionality is an instantiation of a capability with some expected performance that is intended to satisfy one or more goals within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Goal -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Goal">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#concernsExtendedSystem"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasDesiredState"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#SystemState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">goal</rdfs:label>
+        <skos:definition xml:lang="en">A goal is a subset of the possible states of an extended system representing the conditions that an agent intends to achieve or maintain.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#MOFLevel -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#MOFLevel">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#M0"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#M1"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#M2"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#M3"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">MOF level</rdfs:label>
+        <skos:altLabel xml:lang="en">OMG MOF</skos:altLabel>
+        <skos:definition xml:lang="en">The OMG Meta Object Facility metamodeling layer, M0 to M3, at which a model sits.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Meaning -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Meaning">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasInputFeature"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasModelet"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">meaning</rdfs:label>
+        <skos:definition xml:lang="en">Meaning is the informational content produced by exerting one or more modelets on input features, representing an interpretation of a phenomenon of the associated extended system within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Metric -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Metric">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasMeasureType"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasureType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">metric</rdfs:label>
+        <skos:definition xml:lang="en">A metric is a measure used to assess mission success.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Mission -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Mission">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">mission</rdfs:label>
+        <skos:definition xml:lang="en">A mission is a high-level goal expressed as desired effects or target conditions for an extended system within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#MissionPlan -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#MissionPlan">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#addressesMission"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Mission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasTask"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">mission plan</rdfs:label>
+        <skos:definition xml:lang="en">A mission plan is a collection of tasks, together with any required precedence relations among them, to be carried out in order to satisfy the mission within the given extended system and context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#MissionSpecification -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#MissionSpecification">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#addressesMission"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Mission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasSuccessCriterion"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#MissionSuccessCriterion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#pursuesGoal"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Goal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">mission specification</rdfs:label>
+        <skos:definition xml:lang="en">A mission specification is the set of specific goals refining a given mission, together with the mission success criteria (expressed as metrics and their satisfaction conditions) that enable assessment of mission success.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#MissionSuccessCriterion -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#MissionSuccessCriterion">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasMetric"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Metric"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">mission success criterion</rdfs:label>
+        <skos:definition xml:lang="en">A mission success criterion pairs a metric with a satisfaction condition in a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Model -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Model">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasModelType"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ModelType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasModelet"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasReferent"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#usedBy"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">model</rdfs:label>
+        <skos:definition xml:lang="en">A model is an entity that represents another entity (its referent).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ModelMetadata -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ModelMetadata">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model declares this as a metadata definition nested in Model.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">model metadata</rdfs:label>
+        <skos:definition xml:lang="en">Model metadata is the descriptive record of a model, covering its identity, modelled phenomenon, intended use, formalism, abstraction and metamodeling level, epistemic state, provenance and declared assumptions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ModelType -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ModelType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#analyticalModel"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#descriptiveModel"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#hybridModel"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#metaModel"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#physicalModel"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">model type</rdfs:label>
+        <skos:definition xml:lang="en">The kind of model, by the nature of its representation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Modelet -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Modelet">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasAspect"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasReferent"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">modelet</rdfs:label>
+        <skos:definition xml:lang="en">A modelet is a model fragment that represents a specific aspect of a referent system or entity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ModeletAspect -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ModeletAspect">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#behaviorAspect"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#capabilityAspect"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#parameterAspect"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#performanceAspect"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#propertyAspect"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#statesAspect"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#structureAspect"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">modelet aspect</rdfs:label>
+        <skos:definition xml:lang="en">The aspect of its referent that a modelet represents.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ModeletEnginePair -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ModeletEnginePair">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#pairsEngine"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#Engine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#pairsModelet"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#Modelet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">modelet-engine pair</rdfs:label>
+        <skos:definition xml:lang="en">A modelet-engine pair is the pairing of a modelet with an engine that can exert it.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#PerformanceConstraint -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#PerformanceConstraint">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model states this as a constraint definition.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">performance constraint</rdfs:label>
+        <skos:definition xml:lang="en">A performance constraint bounds the response time admissible when a model is used, for instance at run time.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#PerformanceMeasure -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#PerformanceMeasure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasMeasureType"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasureType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasSubject"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#measuresBehavior"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExhibitedBehavior"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">performance measure</rdfs:label>
+        <skos:altLabel xml:lang="en">performance</skos:altLabel>
+        <skos:definition xml:lang="en">Performance is a measure of how effectively the exhibited behavior of a system (or one of its components) contributes to fulfilling its goals when executing tasks within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#PerformanceMeasureType -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#PerformanceMeasureType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#MOE"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#MOP"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#TPM"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">performance measure type</rdfs:label>
+        <skos:definition xml:lang="en">The kind of performance measure used to assess a system: measure of effectiveness, measure of performance, or technical performance measure.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Phenomenon -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Phenomenon">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#concernsExtendedSystem"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#exhibitedBy"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">phenomenon</rdfs:label>
+        <skos:definition xml:lang="en">A phenomenon is any distinguishable aspect or behavior of an extended system, or of one of its parts, within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Policy -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Policy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">policy</rdfs:label>
+        <skos:definition xml:lang="en">A policy is a rule or strategy that, for a given action trigger and a given context of an extended system, determines a set of candidate actions that are admissible responses to that trigger in that context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#PotentialBehavior -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#PotentialBehavior">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#behaviorOf"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasTimeInterval"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">potential behavior</rdfs:label>
+        <skos:definition xml:lang="en">The potential behavior of a system over a time interval is the set of all trajectories the system may follow over that interval.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Projection -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Projection">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasPotentialBehavior"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/coresense/cso#PotentialBehavior"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">projection</rdfs:label>
+        <skos:definition xml:lang="en">Projection is a representation that maps a given situation of an extended system in a given context, into a representation in a chosen space, over a specified projection domain.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Provenance -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Provenance">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Derived"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Historical"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Original"/>
+                    <rdf:Description rdf:about="http://w3id.org/coresense/cso#Versioned"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">provenance</rdfs:label>
+        <skos:definition xml:lang="en">The origin and lifecycle standing of a model: original, derived, historical or versioned.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Risk -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Risk">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasAdverseEvent"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#AdverseOccurrence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">risk</rdfs:label>
+        <skos:definition xml:lang="en">A risk is a measure of the potential for an adverse event to negatively affect an entity, system, or extended system within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Role -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Role">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#playedBy"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">role</rdfs:label>
+        <skos:definition xml:lang="en">A role is a context- and time-dependent designation, with associated responsibilities and constraints, that an entity may assume in order to contribute to the achievement or maintenance of a goal.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#ScalabilityConstraint -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#ScalabilityConstraint">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model states this as a constraint definition.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">scalability constraint</rdfs:label>
+        <skos:definition xml:lang="en">A scalability constraint bounds the load, such as the number of concurrent users, admissible when a model is used.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#SelfModel -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#SelfModel">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Model"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasReferent"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#usedBy"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/coresense/cso#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">self model</rdfs:label>
+        <skos:definition xml:lang="en">A self model is a model whose referent is the owning system itself, so that referent and user coincide.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Sense -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Sense">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#producesData"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Data"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#sensesEntity"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">sense</rdfs:label>
+        <skos:definition xml:lang="en">Sense is the action of acquiring raw sensor data about the phenomenon being observed in the extended system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Sensor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Sensor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">sensor</rdfs:label>
+        <skos:definition xml:lang="en">A sensor is an entity that acquires raw sensor data about phenomena, properties, states, or attributes of an entity being observed in the extended system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Stakeholder -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Stakeholder">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">stakeholder</rdfs:label>
+        <skos:definition xml:lang="en">A stakeholder is an entity for whom a system S is relevant because the behavior or outcomes of S can affect the achievement of its own goals.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#StakeholderValue -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#StakeholderValue">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasStakeholder"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">stakeholder value</rdfs:label>
+        <skos:definition xml:lang="en">Stakeholder value is the amount of benefit at a cost provided to stakeholders within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#SuperSystem -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#SuperSystem">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#System"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasComponent"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/coresense/cso#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">super system</rdfs:label>
+        <skos:definition xml:lang="en">A super system is a system whose components are, themselves, systems.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#System -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#System">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Entity"/>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">system</rdfs:label>
+        <skos:definition xml:lang="en">A system is an entity represented by a tuple (C, R), where C is a set of components and R is the set of binary relations between them.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#SystemOfInterest -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#SystemOfInterest">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#concernsExtendedSystem"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasStakeholder"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Stakeholder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">system of interest</rdfs:label>
+        <skos:definition xml:lang="en">For a given stakeholder, the system of interest is the part of an extended system that constitutes the focus of engineering activities.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#SystemState -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#SystemState">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#EntityState"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#stateOf"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/coresense/cso#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">system state</rdfs:label>
+        <skos:definition xml:lang="en">The state of a system at a time instant is the complete set of attribute values describing the current condition of its components and their relations.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#SystemTrajectory -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#SystemTrajectory">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasState"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#SystemState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasTimeInterval"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#trajectoryOf"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">system trajectory</rdfs:label>
+        <skos:altLabel xml:lang="en">trajectory</skos:altLabel>
+        <skos:definition xml:lang="en">A trajectory is a time-ordered sequence of states representing one possible evolution of the system over a time interval.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Task -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Task">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasPlannedAction"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">task</rdfs:label>
+        <skos:definition xml:lang="en">A task is a set of planned actions, executed by one or more agents, that is intended to contribute to the achievement of one or more goals within a given context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#TimeInterval -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#TimeInterval">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model states this structurally rather than in prose.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">time interval</rdfs:label>
+        <skos:definition xml:lang="en">A time interval is the stretch of time delimited by an initial time instant and a later final time instant, both on the same time scale.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Trigger -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#Trigger">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasTriggerCondition"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#TriggerCondition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">trigger</rdfs:label>
+        <skos:altLabel xml:lang="en">action trigger</skos:altLabel>
+        <skos:definition xml:lang="en">An action trigger is a condition on the state and/or exhibited behavior of an extended system, identified within a given context, whose satisfaction indicates the need to initiate the execution of one or more actions to contribute to the achievement or maintenance of one or more goals.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#TriggerCondition -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#TriggerCondition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasContext"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/coresense/cso#Context"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Editorial definition; the SysML v2 model declares this as an abstract constraint definition to be redefined in usages.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">trigger condition</rdfs:label>
+        <skos:definition xml:lang="en">A trigger condition is the condition, evaluated in a given context of an extended system, whose satisfaction fires an action trigger.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#WorldModel -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coresense/cso#WorldModel">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coresense/cso#Model"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/coresense/cso#hasReferent"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/coresense/cso#ExtendedSystem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:source rdf:resource="http://www.coresense.eu/doc/CS-115.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">world model</rdfs:label>
+        <skos:definition xml:lang="en">A world model is a model whose referent is the extended system being operated in.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Derived -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Derived">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#Provenance"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">derived</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Evidenced -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Evidenced">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#EpistemicState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">evidenced</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Historical -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Historical">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#Provenance"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">historical</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Limited -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Limited">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#EpistemicState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">limited</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#M0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#M0">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#MOFLevel"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">M0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#M1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#M1">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#MOFLevel"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">M1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#M2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#M2">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#MOFLevel"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">M2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#M3 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#M3">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#MOFLevel"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">M3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#MOE -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#MOE">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasureType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">measure of effectiveness</rdfs:label>
+        <skos:altLabel xml:lang="en">MOE</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#MOP -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#MOP">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasureType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">measure of performance</rdfs:label>
+        <skos:altLabel xml:lang="en">MOP</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Original -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Original">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#Provenance"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">original</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#TPM -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#TPM">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#PerformanceMeasureType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">technical performance measure</rdfs:label>
+        <skos:altLabel xml:lang="en">TPM</skos:altLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Uncertain -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Uncertain">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#EpistemicState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">uncertain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Validated -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Validated">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#EpistemicState"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">validated</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#Versioned -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#Versioned">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#Provenance"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">versioned</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#aborted -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#aborted">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ActionStatus"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">aborted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#analyticalModel -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#analyticalModel">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModelType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">analytical model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#behaviorAspect -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#behaviorAspect">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">behavior aspect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#capabilityAspect -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#capabilityAspect">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">capability aspect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#descriptiveModel -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#descriptiveModel">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModelType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">descriptive model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#failed -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#failed">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ActionStatus"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">failed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#hybridModel -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#hybridModel">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModelType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">hybrid model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#metaModel -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#metaModel">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModelType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">meta model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#notTriggered -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#notTriggered">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ActionStatus"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">not triggered</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#parameterAspect -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#parameterAspect">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">parameter aspect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#performanceAspect -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#performanceAspect">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">performance aspect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#physicalModel -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#physicalModel">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModelType"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">physical model</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#propertyAspect -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#propertyAspect">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">property aspect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#statesAspect -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#statesAspect">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">states aspect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#structureAspect -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#structureAspect">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ModeletAspect"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">structure aspect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#succeeded -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#succeeded">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ActionStatus"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">succeeded</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coresense/cso#timedOut -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coresense/cso#timedOut">
+        <rdf:type rdf:resource="http://w3id.org/coresense/cso#ActionStatus"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/coresense/cso"/>
+        <rdfs:label xml:lang="en">timed out</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+        <rdfs:label xml:lang="en">license</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+        <rdfs:label xml:lang="en">publisher</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/source">
+        <rdfs:label xml:lang="en">source</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:label xml:lang="en">title</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
